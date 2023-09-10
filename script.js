@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       caption: "React Js Tutorial"
   },
   {
-    imageUrl: "ImgCss/python-01.png",
+    imageUrl: "ImgCss/Python.png",
     caption: "Python for Beginners"
 },
       // Add more certification objects as needed
@@ -124,7 +124,7 @@ const projects = [
   {
     title: " WeatheRing App",
     description: "Web application that provides real-time weather information.",
-    imageUrl: "ImgCss/Pro-04.png",
+    imageUrl: "ImgCss/pro-04.png",
     githubLink: "https://github.com/Pritam-Akatsuki/internsavy_Level-2_Task-1"
 },
 {
