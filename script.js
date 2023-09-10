@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       imageUrl: "ImgCss/React.jpg",
       caption: "React Js Tutorial"
   },
-  {
+   {
     imageUrl: "ImgCss/python-01.png",
     caption: "Python for Beginners"
 },
