@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       caption: "React Js Tutorial"
   },
   {
-    imageUrl: "ImgCss/Python.png",
+    imageUrl: "ImgCss/python-01.png",
     caption: "Python for Beginners"
 },
       // Add more certification objects as needed
