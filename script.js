@@ -166,6 +166,28 @@ const projects = [
     return card;
   }
 
+  projectCardsContainer.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    startPositionX = e.touches[0].pageX - projectCardsContainer.offsetLeft;
+    scrollLeft = projectCardsContainer.scrollLeft;
+});
+
+projectCardsContainer.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    const mouseX = e.touches[0].pageX - projectCardsContainer.offsetLeft;
+    const dragDistance = mouseX - startPositionX;
+    projectCardsContainer.scrollLeft = scrollLeft - dragDistance;
+});
+
+projectCardsContainer.addEventListener("touchend", () => {
+    isDragging = false;
+});
+
+projectCardsContainer.addEventListener("touchcancel", () => {
+    isDragging = false;
+});
+
+
   projectCardsContainer.addEventListener("mousedown", (e) => {
     isDragging = true;
     startPositionX = e.pageX - projectCardsContainer.offsetLeft;
@@ -197,3 +219,5 @@ const projects = [
     const card = createProjectCard(project);
     projectCardsContainer.appendChild(card);
   });
+
+  
