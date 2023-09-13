@@ -52,10 +52,13 @@ document.addEventListener("DOMContentLoaded", function () {
       caption: "React Js Tutorial"
   },
   {
-    imageUrl: "ImgCss/python-01.png",
+    imageUrl: "ImgCss/Skillup-01.PNG",
     caption: "Python for Beginners"
 },
-      // Add more certification objects as needed
+{
+  imageUrl: "ImgCss/Skillup-02.PNG",
+  caption: "ReactJs for Beginners"
+},
   ];
 
   function createCarouselSlides() {
@@ -124,7 +127,7 @@ const projects = [
   {
     title: " WeatheRing App",
     description: "Web application that provides real-time weather information.",
-    imageUrl: "ImgCss/Pro-04.png",
+    imageUrl: "ImgCss/Weather-pro.png",
     githubLink: "https://github.com/Pritam-Akatsuki/internsavy_Level-2_Task-1"
 },
 {
@@ -136,7 +139,7 @@ const projects = [
 {
   title: "TODO App",
   description: "Project that combines the power of HTML, CSS, JavaScript, and SQL.",
-  imageUrl: "ImgCss/Pro-5.png",
+  imageUrl: "ImgCss/Todo-pro.png",
   githubLink: "https://github.com/Pritam-Akatsuki/OCTANET_AUGUST/tree/master"
 },
   // Add more projects as needed
@@ -220,4 +223,61 @@ projectCardsContainer.addEventListener("touchcancel", () => {
     projectCardsContainer.appendChild(card);
   });
 
+  // ..................................... Intership cards 
+
+  const cardData = [
+    {
+      imageLink: "https://drive.google.com/file/d/1JIukmgT4TgWsednHVoDX2AdrxIfDDSom/view?usp=sharing",
+      buttonLink: "https://github.com/Pritam-Akatsuki/Basic-Banking-System/tree/master",
+      imageSrc: "ImgCss/The-Sparks.jpg",
+      title: "Internship Program",
+      date: "Sep 2022 - Oct 2022",
+    },
+    {
+      imageLink: "https://drive.google.com/file/d/1S5xD_4R18TRgOPvA9mH-U_j_zbLmy8vC/view?usp=sharing",
+      buttonLink: "https://github.com/Pritam-Akatsuki/OCTANET_AUGUST",
+      imageSrc: "ImgCss/OctaNet.PNG",
+      title: "Web Development Internship",
+      date: "Aug 2023 - Sep 2023",
+    },
+    {
+      imageLink: "https://drive.google.com/file/d/1XS1Hd4bNcixxa64voV5Cb7Ym9slRaNgB/view?usp=sharing",
+      buttonLink: "https://github.com/Pritam-Akatsuki/internsavy_Level-2_Task-1",
+      imageSrc: "ImgCss/Internsavy.PNG",
+      title: "Web Dev. and Designing",
+      date: "Aug 2023 - Sep 2023",
+    },
+  ];
   
+
+// Function to generate card HTML dynamically
+function generateCard(card) {
+  return `
+    <div class="col-md-4">
+      <div class="card mx-auto mb-4" style="width: 20rem; background-color: #90e0ef;">
+        <a href="${card.imageLink}" target="_blank" rel="noopener noreferrer">
+          <img src="${card.imageSrc}" class="card-img-top" alt="${card.title}" style="height: 200px; max-width: 100%;">
+        </a>
+        <div class="card-body text-center">
+          <h5 class="card-title">${card.title}</h5>
+          <p class="card-text">From ${card.date}</p>
+          <a href="${card.buttonLink}" class="btn btn-danger" target="_blank">My internship tasks included:</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+
+// Function to add cards to the container
+function addCardsToContainer(cardData) {
+  const cardContainer = document.getElementById("cardContainer");
+  cardData.forEach((card) => {
+    const cardHtml = generateCard(card);
+    cardContainer.innerHTML += cardHtml;
+  });
+}
+
+// Call the function to add cards to the container
+addCardsToContainer(cardData);
+
