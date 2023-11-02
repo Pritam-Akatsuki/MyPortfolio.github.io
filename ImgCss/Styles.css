@@ -9,6 +9,8 @@
     height: 500px;
   }
 
+  
+
   @keyframes colorChange {
     0%, 100% { color: #3498db; }
     50% { color: gold; }
@@ -26,9 +28,11 @@
     background-image: url("./BG_final.jpg");
     background-size: cover;
     background-position: center;
-    height: 500px; /* Adjust the height as needed */
-   
+    height: 500px; 
   }
+ 
+
+
  
   
   @media (max-width: 768px) {
@@ -104,11 +108,20 @@
   transform: scale(1.1);
 }
 
+.gif-container {
+  display: none; /* Hide the container by default */
+}
+
+@media (min-width: 768px) {
+  .gif-container {
+      display: block; /* Show the container on screens with a minimum width of 768px (adjust as needed) */
+  }
+}
 
   
 
-
 /* *****************************project ************************************* */
+
 .project-cards-container {
   display: flex;
   flex-wrap: nowrap;
