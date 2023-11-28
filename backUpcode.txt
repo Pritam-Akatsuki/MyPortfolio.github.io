@@ -1,0 +1,190 @@
+<div class="border-2 border-top border-bottom border-dark-subtle pb-4 " id="Certification">
+  <h1 class="text-center hid pt-3 pb-4 textStyle">Certifications :)</h1>
+  <div class="row justify-content-evenly align-items-center">
+    <div class="col-md-3">
+    
+      <div class="gif-container">
+          <img class="gif" src="./ImgCss/CG-unscreen.gif" alt="A GIF animation">
+      </div>
+
+      </div>
+
+      <div class="col-md-6 col-sm-8 rounded p-3">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                  <!-- Slides will be added here dynamically -->
+              </div>
+  
+              <div class="carousel-inner custom_style border border-danger border-4 rounded">
+                  <!-- Slides will be added here dynamically -->
+              </div>
+  
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon bg-danger rounded-pill" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon bg-danger rounded-pill" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+      </div>
+  
+  
+      <div class="col-md-2">
+      <div class="container">
+<div class="row justify-content-evenly">
+  <div class="col-3 col-md-12">
+    <a href="https://www.w3profile.com/KAKASHI" target="_blank" rel="noopener noreferrer">
+      <img
+        src="ImgCss/w3img.png"
+        alt="error1"
+        class="img-fluid custom-img m-4 border border-3 border-danger"
+      >
+    </a>
+    
+  </div>
+  <div class="col-3 col-md-12">
+    <a href="https://www.codingninjas.com/studio/profile/Pritam_005" target="_blank" rel="noopener noreferrer">
+      <img
+        src="ImgCss/CN-img.jpg"
+        alt="LinkedIn"
+        class="img-fluid custom-img m-4 border border-3 border-danger"
+      >
+    </a>
+  </div>
+  <div class="col-3 col-md-12">
+    <a href="https://accounts.simplilearn.com/user/profile" target="_blank" rel="noopener noreferrer">
+      <img
+        src="https://asset.brandfetch.io/idKycbgLtZ/idsr4R0aeJ.jpeg"
+        alt="LinkedIn"
+        class="img-fluid custom-img m-4 border border-3 border-danger"
+      >
+    </a>
+  </div>
+  <div class="col-3 col-md-12">
+    <a href="https://olympus.mygreatlearning.com/certificates" target="_blank" rel="noopener noreferrer">
+      <img
+        src="ImgCss/GL-img.png"
+        alt="GitHub"
+        class="img-fluid custom-img m-4 border border-3 border-danger"
+       >
+    </a>
+  </div>
+</div>
+</div>
+
+      </div>
+      
+    </div>
+    </div>
+    </div>
+
+
+
+
+old cirtification JavaScript code :
+      
+document.addEventListener("DOMContentLoaded", function () {
+  const carouselInner = document.querySelector(
+    "#carouselExampleCaptions .carousel-inner"
+  );
+  const carouselIndicators = document.querySelector(
+    "#carouselExampleCaptions .carousel-indicators"
+  );
+
+  const certificationData = [
+    {
+      imageUrl: "ImgCss/AWS_01.jpg",
+      caption: "AWS Academy Graduate",
+    },
+    {
+      imageUrl: "ImgCss/TCS.jpg",
+      caption: "Communication Skills",
+    },
+    {
+      imageUrl: "ImgCss/HTML.jpg",
+      caption: "Front Ent DEvelopment- HTML",
+    },
+    {
+      imageUrl: "ImgCss/CPP.jpg",
+      caption: "C++ Programming in Hindi",
+    },
+    {
+      imageUrl: "ImgCss/CN_R1.jpg",
+      caption: "Innovate India Coding Campionship (R-1)",
+    },
+    {
+      imageUrl: "ImgCss/CN_R2.jpg",
+      caption: "Innovate India Coding Campionship (R-2)",
+    },
+    {
+      imageUrl: "ImgCss/React.jpg",
+      caption: "React Js Tutorial",
+    },
+    {
+      imageUrl: "ImgCss/Skillup-01.PNG",
+      caption: "Python for Beginners",
+    },
+    {
+      imageUrl: "ImgCss/Skillup-02.PNG",
+      caption: "ReactJs for Beginners",
+    },
+    {
+      imageUrl: "ImgCss/IP.jpg",
+      caption: "IP Awareness/Training Program",
+    },
+    {
+      imageUrl: "ImgCss/Excel-01.jpg",
+      caption: "Introduction to MS Excel",
+    },
+  ];
+
+  function createCarouselSlides() {
+    for (let i = 0; i < certificationData.length; i++) {
+      const slide = document.createElement("div");
+      slide.classList.add("carousel-item");
+      if (i === 0) {
+        slide.classList.add("active");
+      }
+
+      const image = document.createElement("img");
+      image.src = certificationData[i].imageUrl;
+      image.classList.add("d-block", "w-100");
+      slide.appendChild(image);
+
+      const caption = document.createElement("div");
+      caption.classList.add(
+        "carousel-caption",
+        "d-none",
+        "d-md-block",
+        "text-dark"
+      );
+      const captionText = document.createElement("h4");
+      captionText.textContent = certificationData[i].caption;
+      caption.appendChild(captionText);
+      slide.appendChild(caption);
+
+      carouselInner.appendChild(slide);
+
+      const indicator = document.createElement("button");
+      indicator.setAttribute("type", "button");
+      indicator.setAttribute("data-bs-target", "#carouselExampleCaptions");
+      indicator.setAttribute("data-bs-slide-to", i.toString());
+      indicator.className = i === 0 ? "active bg-danger" : "bg-danger";
+      indicator.setAttribute("aria-label", `Slide ${i + 1}`);
+      carouselIndicators.appendChild(indicator);
+    }
+  }
+
+  // Create initial carousel slides
+  createCarouselSlides();
+
+  // Initialize Bootstrap carousel
+  const carousel = new bootstrap.Carousel(
+    document.getElementById("carouselExampleCaptions"),
+    {
+      interval: 3000, // Transition every 5 seconds
+    }
+  );
+}); 
