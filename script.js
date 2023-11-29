@@ -271,8 +271,8 @@ function createProjectCard(project) {
                 <h5 class="card-title">${project.title}</h5>
                 <p class="card-text">${project.description}</p>
                 <div class="text-center">
-                <a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" ><img src = "./ImgCSs/but-01.png" class="box-img mx-4"></a>
-                <a href="${project.demo}" target="_blank" rel="noopener noreferrer" ><img src = "./ImgCSs/but-02.png" class="box-img mx-4"></a>
+                <a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" ><img src = "./ImgCss/gitBut.png" class="box-img mx-4"></a>
+                <a href="${project.demo}" target="_blank" rel="noopener noreferrer" ><img src = "./ImgCss/videoBut.png" class="box-img mx-4"></a>
             </div>
             </div>
         </div>
