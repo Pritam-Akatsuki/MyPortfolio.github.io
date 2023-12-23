@@ -141,6 +141,25 @@
   border: 2px solid black;
   border-radius: 5px;
 }
+
+
+
+
+.badges1{
+  width: 292px;
+  height: 300px;
+  margin: auto;
+  border-radius: 20px;
+  justify-content: center;
+
+}
+.badges2{
+  width: 292px;
+  height: auto;
+  margin: auto;
+  border-radius: 20px;
+
+}
 /* *****************************project ************************************* */
 
 .project-cards-container {
