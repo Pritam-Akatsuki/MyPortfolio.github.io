@@ -267,21 +267,36 @@ let scrollLeft = 0;
 
 function createProjectCard(project) {
   const card = document.createElement("div");
-  card.classList.add("col-lg-4", "col-sm-6", "mb-2", "project-card"); // Add the project-card class
+  card.classList.add("col-lg-4", "col-sm-6", "mb-4", "project-card");
 
   card.innerHTML = `
-        <div class="card custom-card border-5" style="border-color:#142850;  background-color: #0C7B93;">
-            <img src="${project.imageUrl}" class="card-img-top" alt="${project.title}">
-            <div class="card-body">
-                <h5 class="card-title">${project.title}</h5>
-                <p class="card-text">${project.description}</p>
-                <div class="text-center">
-                <a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" ><img src = "./ImgCss/gitBut.png" class="box-img mx-4"></a>
-                <a href="${project.demo}" target="_blank" rel="noopener noreferrer" ><img src = "./ImgCss/videoBut.png" class="box-img mx-4"></a>
-            </div>
-            </div>
+    <div class="card custom-card h-100">
+      <div class="project-image-wrapper">
+        <img src="${project.imageUrl}" class="card-img-top project-image" alt="${project.title}">
+        <div class="project-overlay">
+          <div class="project-buttons">
+            <a href="${project.githubLink}" class="project-btn github-btn" target="_blank" rel="noopener noreferrer">
+              <img src="./ImgCss/gitBut.png" alt="GitHub" class="btn-icon">
+              <span>View Code</span>
+            </a>
+            <a href="${project.demo}" class="project-btn demo-btn" target="_blank" rel="noopener noreferrer">
+              <img src="./ImgCss/videoBut.png" alt="Demo" class="btn-icon">
+              <span>Live Demo</span>
+            </a>
+          </div>
         </div>
-    `;
+      </div>
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title fw-bold mb-3">${project.title}</h5>
+        <p class="card-text flex-grow-1">${project.description}</p>
+        <div class="project-tech mt-3">
+          <span class="tech-badge">HTML</span>
+          <span class="tech-badge">CSS</span>
+          <span class="tech-badge">JavaScript</span>
+        </div>
+      </div>
+    </div>
+  `;
 
   return card;
 }
@@ -398,3 +413,73 @@ projects.forEach((project) => {
 
 // // Call the function to add cards to the container
 // addCardsToContainer(cardData);
+
+// Scroll to Top Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollBtn = document.getElementById('scrollToTop');
+    const currentYearSpan = document.getElementById('currentYear');
+    
+    // Update current year
+    currentYearSpan.textContent = new Date().getFullYear();
+
+    // Show/hide scroll button
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+
+    // Scroll to top on click
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Navbar Scroll Effect
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('mainNav');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('nav-scrolled');
+        } else {
+            navbar.classList.remove('nav-scrolled');
+        }
+    });
+    
+    // Active link highlighting
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - 60) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').slice(1) === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+    
+    // Close mobile menu on link click
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const navbarCollapse = document.getElementById('navbarContent');
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        });
+    });
+});

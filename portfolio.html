@@ -7,271 +7,546 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <title>MyPortfolio</title>
   <link rel="icon" type="image/png" href="ImgCss/pl-logo-cut.png">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="bg-dark text-light">
 <!-- ********************************* NavBar ******************************* -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark-subtlep fixed-top">
-  <div class="container-fluid">
-    
-    <a class="navbar-brand hid textStyle" href="#home"><img src="ImgCss/pl-logo-cut.png" alt="missing" class="rounded-circle me-2" style="width: 40px; height:40px;"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-center">
-        
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#Certification">Certification</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Exp">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#project">Project</a>
-        </li>
-        <li class="nav-item mt-1 mx-2">
-          <a class="btn btn-outline-success btn-sm d-block d-sm-inline-block" href="#Footer">Contact Me</a>
-        </li>
-      </ul>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-transparent" id="mainNav">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#home">
+            <div class="d-flex align-items-center">
+                <img src="ImgCss/pl-logo-cut.png" alt="Logo" class="nav-logo rounded-circle me-2">
+                <span class="brand-text">Portfolio</span>
+            </div>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Items -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        <i class="fas fa-user me-2"></i>About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Certification">
+                        <i class="fas fa-certificate me-2"></i>Certification
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Exp">
+                        <i class="fas fa-briefcase me-2"></i>Experience
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#project">
+                        <i class="fas fa-code me-2"></i>Projects
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link contact-btn" href="#Footer">
+                        <i class="fas fa-envelope me-2"></i>Contact Me
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 <!-- ********************************* Home Page ******************************* -->
-<div class="background-container" id="home">
-<div class="container h-500">
-    <div class="row justify-content-evenly align-items-center h-500">
-      <div class="col-lg-8 p-3 ">
-        <h1 class="textStyle">
-          Hey ! I am <br>
-          <strong>Pritam Sham Lambade</strong>
-        </h1>
-        <h4 class="text-info" id="dynamicText">Passionate in AI.</h4>
-      
-        <p class="text-white">
-          As a dedicated computer student with a knack for creative problem-solving, a passion for web development, and a genuine enthusiasm for technical work, my objective is to leverage my skills and knowledge to contribute to a dynamic organization.
-        </p>
-        <div>
-          <a href="./ImgCss/Resume1.pdf" target="_blank" rel="noopener noreferrer" download>
-            <button class="btn btn-outline-success">Download Resume</button>
-          </a>
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row min-vh-100 align-items-center">
+            <!-- Text Content -->
+            <div class="col-lg-8 hero-content">
+                <!-- Greeting -->
+                <div class="greeting-wrapper animate__animated animate__fadeInDown">
+                    <span class="greeting-badge">
+                        <i class="fas fa-code"></i> Welcome to my Portfolio
+                    </span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="hero-title animate__animated animate__fadeInUp animate__delay-1s">
+                    Hey! I'm <br>
+                    <span class="highlight-text">Pritam Sham Lambade</span>
+                </h1>
+
+                <!-- Dynamic Text -->
+                <div class="typing-wrapper animate__animated animate__fadeInUp animate__delay-2s">
+                    <span class="prefix">I'm a</span>
+                    <span class="typing" id="dynamicText">Passionate in AI</span>
+                </div>
+
+                <!-- Description -->
+                <p class="hero-description animate__animated animate__fadeInUp animate__delay-3s">
+                    As a dedicated computer student with a knack for creative problem-solving, 
+                    a passion for web development, and a genuine enthusiasm for technical work, 
+                    my objective is to leverage my skills and knowledge to contribute to a dynamic organization.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-4s">
+                    <a href="./ImgCss/Resume1.pdf" class="btn btn-primary btn-lg download-btn" download>
+                        <i class="fas fa-download me-2"></i>Download Resume
+                    </a>
+                    <a href="#project" class="btn btn-outline-light btn-lg ms-3 view-work-btn">
+                        <i class="fas fa-eye me-2"></i>View My Work
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-links animate__animated animate__fadeInUp animate__delay-5s">
+                    <a href="https://github.com/Pritam-Akatsuki" class="social-icon" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mr-pritamlambade581/" class="social-icon" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:pritamlambade@gmail.com" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        </div>
-      </div>
     </div>
-</div>
+
+    <!-- Background Elements -->
+    <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+</section>
+
 <!-- ********************************* About Page ******************************* -->
 
-<h1 class="text-center hid pt-4 pb-4 textStyle" id="about">About Me :)</h1>
-  <div class="container pb-4">
-    <div class="row">
-      <div class="col-md-2 text-center">
-        <img src="./ImgCss/portfolio-img.jpg" class="profile pb-3 img-fluid rounded-circle" alt="Not found" style="width: 140px; height: auto; ">
-        <h6 class="text-sm"><strong>Mr. Pritam Lambade</strong></h6>
-        <p class="text-center text-sm">Computer Engineer</p>
-      </div>
-      
-      <div class="container col-md-8 pb-3">
-        <p>I am a passionate individual with a strong interest in web development. Currently, I have already taken several online courses and participated in coding boot camps to enhance my skills in web development. where I discovered my love for creating dynamic and user-friendly websites. Throughout my learning journey, I have gained proficiency in various programming languages such as HTML, CSS, JavaScript, React.js and I am continuously expanding my knowledge in backend technologies like Node.js and databases like MongoDB.</p>
-        <h5 class="text-primary">Education :</h5>
-        <ul>
-          <li style="font-size: 17px;"><strong>Bachelor of Engineering (2019-2023)</strong></li>
-          <p>From, Gharda Institute of Technology</p>
-          <div class="progress progress-sm mb-2" role="progressbar" aria-valuenow="8.4" aria-valuemin="0" aria-valuemax="10">
-            <div class="progress-bar" style="width: 74%;">8.40 CGPA</div>
-          </div>
-          <li style="font-size: 17px;"><strong>HSC (2019)</strong></li>
-          <p>From, Shreeman Chandulal sheth High School</p>
-          <div class="progress progress-sm mb-2" role="progressbar" aria-valuenow="8.4" aria-valuemin="0" aria-valuemax="10">
-            <div class="progress-bar" style="width: 55%;">54.92 %</div>
-          </div>
-          <li style="font-size: 17px;"><strong>SSC(2017</strong></li>
-          <p>From, Shreeman Chandulal sheth High School</p>
-          <div class="progress progress-sm mb-2" role="progressbar" aria-valuenow="8.4" aria-valuemin="0" aria-valuemax="10">
-            <div class="progress-bar" style="width: 82%;">81.80 %</div>
-          </div>
-        </ul>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <h3 class="text-center textStyle" id="contact">Contact :</h3>
-            <div class="row">
-              <div class="col-md-6 text-center">
-                <h5 class="text-primary">Phone No.:</h5>
-                <p style="font-size: 17px;"> +91 7517851962 , +91 8600429659</p>
-              </div>
-              <div class="col-md-6 text-center">
-                <h5 class=" text-primary">Add :</h5>
-                <p style="font-size: 17px;">Maharashtra , India</p>
-              </div>
+<!-- About Section -->
+<section id="about" class="about-section py-5">
+    <div class="container">
+        <!-- Section Title -->
+        <h2 class="section-title text-center mb-5 animate__animated animate__fadeInDown">
+            <i class="fas fa-user-circle me-3"></i>About Me
+        </h2>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Profile Card -->
+            <div class="col-lg-4">
+                <div class="profile-card animate__animated animate__fadeInLeft">
+                    <div class="profile-image-wrapper">
+                        <img src="./ImgCss/portfolio-img.jpg" class="profile-image" alt="Pritam Lambade">
+                        <div class="profile-overlay"></div>
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Mr. Pritam Lambade</h3>
+                        <p class="profile-title">Computer Engineer</p>
+                        <!-- <div class="profile-skills">
+                            <span class="skill-tag">Web Development</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div> -->
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-4 m-auto">
-            <ul class="list-inline d-flex justify-content-center pt-3">
-              <li class="list-inline-item">
-                <a href="mailto:pritamlambade@gmail.com">
-                  <img src="./ImgCss/email.png" alt="Mail" class="img-fluid img-thumbnail mb-2 mx-3" style="width: 40px; height: 40px;">
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/pritam-lambade-7996b420a/" target="_blank" rel="noopener noreferrer">
-                  <img src="./ImgCss/LinkedIn.png" alt="LinkedIn" class="img-fluid img-thumbnail mb-2 mx-5" style="width: 40px; height: 40px;">
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://github.com/Pritam-Akatsuki/" target="_blank" rel="noopener noreferrer">
-                  <img src="./ImgCss/github.png" alt="GitHub" class="img-fluid img-thumbnail mb-2 mx-3" style="width: 40px; height: 40px;">
-                </a>
-              </li>
-            </ul>
-          </div>
+
+            <!-- About Content -->
+            <div class="col-lg-8">
+                <div class="about-content animate__animated animate__fadeInRight">
+                    <div class="about-text mb-4">
+                        <p class="lead">I am a passionate individual with a strong interest in web development. Currently, I have already taken several online courses and participated in coding boot camps to enhance my skills in web development, where I discovered my love for creating dynamic and user-friendly websites.</p>
+                        <p>Throughout my learning journey, I have gained proficiency in various programming languages and technologies:</p>
+                        <div class="tech-stack">
+                            <div class="tech-item" data-tooltip="HTML5">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="tech-item" data-tooltip="CSS3">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="tech-item" data-tooltip="JavaScript">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="tech-item" data-tooltip="React">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="tech-item" data-tooltip="Node.js">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <div class="tech-item" data-tooltip="Angular">
+                                <i class="fab fa-angular"></i>
+                            </div>
+                            <div class="tech-item" data-tooltip="Flutter">
+                                <svg class="tech-icon" viewBox="0 0 24 24">
+                                    <path fill="#02569B" d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/>
+                                    <path fill="#13B9FD" d="M14.228 22L7.857 15.63 14.314 9.14h7.37l-6.46 6.46 6.46 6.468h-7.384z"/>
+                                </svg>
+                            </div>
+                            <div class="tech-item" data-tooltip="SAP Hybris">
+                                <svg class="tech-icon" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8l6.4 3.2-6.4 3.2L5.6 8 12 4.8zM4 16.5v-7l7 3.5v7l-7-3.5zm9 3.5v-7l7-3.5v7l-7 3.5z"/>
+                                </svg>
+                            </div>
+                            <div class="tech-item" data-tooltip="Spartacus">
+                                <svg class="tech-icon" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                    <path fill="currentColor" d="M12 6l-4 4h3v4h2v-4h3z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Timeline -->
+                    <div class="education-section">
+                        <h4 class="section-subtitle">
+                            <i class="fas fa-graduation-cap me-2"></i>Education
+                        </h4>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h5>Bachelor of Engineering</h5>
+                                    <p class="timeline-date">2019-2023</p>
+                                    <p>Gharda Institute of Technology</p>
+                                    <div class="progress progress-sm mb-2">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                             style="width: 84%">8.40 CGPA</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h5>HSC</h5>
+                                    <p class="timeline-date">2019</p>
+                                    <p>Shreeman Chandulal sheth High School</p>
+                                    <div class="progress progress-sm mb-2">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                             style="width: 55%">54.92%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h5>SSC</h5>
+                                    <p class="timeline-date">2017</p>
+                                    <p>Shreeman Chandulal sheth High School</p>
+                                    <div class="progress progress-sm mb-2">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                             style="width: 82%">81.80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info-section mt-4">
+                        <h4 class="section-subtitle">
+                            <i class="fas fa-address-card me-2"></i>Contact Information
+                        </h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="contact-card">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <div>
+                                        <h6>Phone</h6>
+                                        <p>+91 7517851962<br>+91 8600429659</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-card">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <h6>Location</h6>
+                                        <p>Khed (415 709) , Ratnagiri , Maharashtra, India</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    </div>
-  </div>
+</section>
 
 <!-- ********************************* Certifications Page ******************************* -->
 
-<!-- ********************************* new cirtification Page ******************************* -->
-<div class="border-2 border-top border-bottom border-dark-subtle pb-4 " id="Certification">
-  <h1 class="text-center hid pt-3 pb-4 textStyle">Certifications :)</h1>
+<!-- Certifications Section -->
+<section id="Certification" class="py-5 bg-gradient">
+  <div class="container">
+    <h2 class="display-4 text-center mb-5 textStyle animate__animated animate__fadeInDown">
+      Certifications & Achievements
+    </h2>
 
-    <div class="row justify-content-evenly">
-      
-      <div class="col-md-6">
-        <h4 class="font-weight-bold">● Certifications :</h4>
-        <p>Note: Click on the icons to view certificates.</p>
-        <div class="row container rounded bg-danger m-auto pt-3 text-center justify-content-evenly" id="boxContainer">
-          <!-- JavaScript will dynamically populate boxes here -->
-        </div>
-        <button id="seeMoreBtn" class="btn btn-outline-success mb-2 btn-sm d-block d-sm-inline-block mt-3">See More</button>
-      </div>
+    <div class="row g-4">
+      <!-- Main Certifications -->
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-lg h-100 bg-dark-subtle">
+          <div class="card-body">
+            <h4 class="card-title mb-4">
+              <i class="fas fa-certificate text-primary me-2"></i>Professional Certifications
+            </h4>
+            
+            <div class="row g-3" id="boxContainer">
+              <!-- Certification cards will be dynamically populated here -->
+            </div>
 
-      <div class="col-md-3">
-        <h4 class="font-weight-bold mb-5">● Learning :</h4>
-        <div class="container rounded bg-danger  m-auto text-center" id="skillsContainer">
-          <a href="https://www.w3profile.com/KAKASHI">
-            <img src="./ImgCss/w3s-snippet.PNG" alt="img-1" class="badges1 mt-2 img-fluid">
-          </a>
-        <hr>
-        <a href="https://www.hackerrank.com/profile/pritamlambade">
-          <img src="./ImgCss/badges.PNG" alt="img-2" class="badges2 mb-2 img-fluid">
-        </a>
-        </div>
-      
-    </div>
-
-      <div class="col-md-2">
-        <div class="container mt-5">
-          <div class="row justify-content-evenly">
-            <div class="col-3 col-md-12">
-              <a href="https://www.w3profile.com/KAKASHI" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="ImgCss/w3img.png"
-                  alt="error1"
-                  class="img-fluid custom-img m-4 border border-3 border-danger"
-                >
-              </a>
-              
-            </div>
-            <div class="col-3 col-md-12">
-              <a href="https://www.hackerrank.com/profile/pritamlambade" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="ImgCss/hr-img.png"
-                  alt="LinkedIn"
-                  class="img-fluid custom-img m-4 border border-3 border-danger"
-                >
-              </a>
-            </div>
-            <div class="col-3 col-md-12">
-              <a href="https://accounts.simplilearn.com/user/profile" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="https://asset.brandfetch.io/idKycbgLtZ/idsr4R0aeJ.jpeg"
-                  alt="LinkedIn"
-                  class="img-fluid custom-img m-4 border border-3 border-danger"
-                >
-              </a>
-            </div>
-            <div class="col-3 col-md-12">
-              <a href="https://olympus.mygreatlearning.com/certificates" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="ImgCss/GL-img.png"
-                  alt="GitHub"
-                  class="img-fluid custom-img m-4 border border-3 border-danger"
-                 >
-              </a>
+            <div class="text-center mt-4">
+              <button id="seeMoreBtn" class="btn btn-primary">
+                <i class="fas fa-plus-circle me-2"></i>Load More Certificates
+              </button>
             </div>
           </div>
-          </div>
+        </div>
       </div>
 
-    </div>  
+      <!-- Learning Platforms -->
+      <div class="col-lg-4">
+        <div class="row g-4">
+          <!-- Badges Section -->
+          <div class="col-12">
+            <div class="card border-0 shadow-lg bg-dark-subtle">
+              <div class="card-body">
+                <h4 class="card-title mb-4">
+                  <i class="fas fa-award text-primary me-2"></i>Achievements
+                </h4>
+                
+                <div class="achievement-cards">
+                  <!-- W3Schools Badge -->
+                  <div class="achievement-card mb-4 hover-effect">
+                    <a href="https://www.w3profile.com/KAKASHI" class="text-decoration-none" target="_blank">
+                      <div class="d-flex align-items-center bg-dark rounded p-3">
+                        <img src="./ImgCss/w3s-snippet.PNG" alt="W3Schools" class="achievement-img me-3">
+                        <div>
+                          <h6 class="text-white mb-1">W3Schools Profile</h6>
+                          <small class="text-muted">View my learning progress</small>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
 
+                  <!-- HackerRank Badge -->
+                  <div class="achievement-card hover-effect">
+                    <a href="https://www.hackerrank.com/profile/pritamlambade" class="text-decoration-none" target="_blank">
+                      <div class="d-flex align-items-center bg-dark rounded p-3">
+                        <img src="./ImgCss/badges.PNG" alt="HackerRank" class="achievement-img me-3">
+                        <div>
+                          <h6 class="text-white mb-1">HackerRank Badges</h6>
+                          <small class="text-muted">View my coding achievements</small>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Platform Links -->
+          <div class="col-12">
+            <div class="card border-0 shadow-lg bg-dark-subtle">
+              <div class="card-body">
+                <h4 class="card-title mb-4">
+                  <i class="fas fa-graduation-cap text-primary me-2"></i>Learning Platforms
+                </h4>
+                
+                <div class="platform-grid">
+                  <a href="https://www.w3profile.com/KAKASHI" class="platform-item" target="_blank">
+                    <img src="ImgCss/w3img.png" alt="W3Schools" class="platform-icon">
+                    <span class="platform-name">W3Schools</span>
+                  </a>
+                  
+                  <a href="https://www.hackerrank.com/profile/pritamlambade" class="platform-item" target="_blank">
+                    <img src="ImgCss/hr-img.png" alt="HackerRank" class="platform-icon">
+                    <span class="platform-name">HackerRank</span>
+                  </a>
+                  
+                  <a href="https://accounts.simplilearn.com/user/profile" class="platform-item" target="_blank">
+                    <img src="https://asset.brandfetch.io/idKycbgLtZ/idsr4R0aeJ.jpeg" alt="Simplilearn" class="platform-icon">
+                    <span class="platform-name">Simplilearn</span>
+                  </a>
+                  
+                  <a href="https://olympus.mygreatlearning.com/certificates" class="platform-item" target="_blank">
+                    <img src="ImgCss/GL-img.png" alt="Great Learning" class="platform-icon">
+                    <span class="platform-name">Great Learning</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
+  </div>
+</section>
+
 <!-- ********************************* Intership Page ******************************* -->
-<div class="container mb-4" id="Exp">
-  <h1  class="hid text-center pb-3 pt-3 textStyle">Experience & Internship :)</h1>
-  <div class="row justify-content-evenly">
-    <div class="container col-md-7 m-2 ">
-    <!-- <div id="cardContainer" class="row justify-content-evenly"></div> -->
-    <div id="carouselExampleControls" class="carousel slide border  border-3 border-info rounded" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          
-          <a href="https://drive.google.com/file/d/1JIukmgT4TgWsednHVoDX2AdrxIfDDSom/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-            <img src="./ImgCss/Sparks .jpg" class="d-block w-100" alt="...">
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="https://drive.google.com/file/d/1S5xD_4R18TRgOPvA9mH-U_j_zbLmy8vC/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-            <img src="./ImgCss/OctaNet.PNG" class="d-block w-100" alt="...">
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="https://drive.google.com/file/d/1XS1Hd4bNcixxa64voV5Cb7Ym9slRaNgB/view?usp=sharing"  target="_blank" rel="noopener noreferrer">
-            <img src="./ImgCss/Intership-03.jpg" class="d-block w-100" alt="...">
-          </a>
+<!-- Experience & Internship Section -->
+<section id="Exp" class="py-5 bg-gradient">
+  <div class="container">
+    <h2 class="display-4 text-center mb-5 textStyle animate__animated animate__fadeInDown">
+     Experience & Internships
+    </h2>
+
+    <div class="row justify-content-between align-items-center g-4">
+      <!-- Internship Showcase -->
+      <div class="col-lg-7">
+        <div class="internship-showcase">
+          <!-- Custom Carousel -->
+          <div id="internshipCarousel" class="carousel slide shadow-lg" data-bs-ride="carousel">
+            <div class="carousel-inner rounded-4 overflow-hidden">
+              <!-- The Sparks Foundation -->
+              <div class="carousel-item active">
+                <div class="internship-card">
+                  <div class="certificate-image">
+                    <img src="./ImgCss/Sparks .jpg" class="d-block w-100" alt="Sparks Foundation Certificate">
+                    <div class="certificate-overlay">
+                      <a href="https://drive.google.com/file/d/1JIukmgT4TgWsednHVoDX2AdrxIfDDSom/view" 
+                         class="btn btn-light btn-lg" target="_blank">
+                        <i class="fas fa-external-link-alt me-2"></i>View Certificate
+                      </a>
+                    </div>
+                  </div>
+                  <div class="internship-details bg-dark p-4">
+                    <h4 class="text-primary">The Sparks Foundation</h4>
+                    <p class="text-light mb-3">Web Development Intern</p>
+                    <div class="tech-stack">
+                      <span class="badge bg-primary me-2">HTML</span>
+                      <span class="badge bg-primary me-2">CSS</span>
+                      <span class="badge bg-primary me-2">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OctaNet -->
+              <div class="carousel-item">
+                <div class="internship-card">
+                  <div class="certificate-image">
+                    <img src="./ImgCss/OctaNet.PNG" class="d-block w-100" alt="OctaNet Certificate">
+                    <div class="certificate-overlay">
+                      <a href="https://drive.google.com/file/d/1S5xD_4R18TRgOPvA9mH-U_j_zbLmy8vC/view" 
+                         class="btn btn-light btn-lg" target="_blank">
+                        <i class="fas fa-external-link-alt me-2"></i>View Certificate
+                      </a>
+                    </div>
+                  </div>
+                  <div class="internship-details bg-dark p-4">
+                    <h4 class="text-primary">OctaNet</h4>
+                    <p class="text-light mb-3">Frontend Development Intern</p>
+                    <div class="tech-stack">
+                      <span class="badge bg-primary me-2">React</span>
+                      <span class="badge bg-primary me-2">Bootstrap</span>
+                      <span class="badge bg-primary me-2">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Internsavy -->
+              <div class="carousel-item">
+                <div class="internship-card">
+                  <div class="certificate-image">
+                    <img src="./ImgCss/Intership-03.jpg" class="d-block w-100" alt="Internsavy Certificate">
+                    <div class="certificate-overlay">
+                      <a href="https://drive.google.com/file/d/1XS1Hd4bNcixxa64voV5Cb7Ym9slRaNgB/view" 
+                         class="btn btn-light btn-lg" target="_blank">
+                        <i class="fas fa-external-link-alt me-2"></i>View Certificate
+                      </a>
+                    </div>
+                  </div>
+                  <div class="internship-details bg-dark p-4">
+                    <h4 class="text-primary">Internsavy</h4>
+                    <p class="text-light mb-3">Web Development Intern</p>
+                    <div class="tech-stack">
+                      <span class="badge bg-primary me-2">HTML</span>
+                      <span class="badge bg-primary me-2">CSS</span>
+                      <span class="badge bg-primary me-2">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+              <button class="carousel-control-prev" type="button" data-bs-target="#internshipCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#internshipCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      <button class="carousel-control-prev custom-button" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-danger rounded-pill" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next red" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon bg-danger rounded-pill" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-  <div class="container col-md-4 border border-3 border-info rounded bg-info m-2 p-3">
-    <p class="fs-5">During my web development internship, I gained practical experience in web technologies such as HTML, CSS, and JavaScript. I worked on projects focused on user experience, responsive design, and performance optimization. Click on the button below to access project code from my internship.</p>
-    
-    <div class="dropdown">
-      <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-        GitHub Links
-      </a>
-    
-      <ul class="dropdown-menu bg-secondary" aria-labelledby="dropdownMenuLink">
-        <li><a class="dropdown-item" href="https://github.com/Pritam-Akatsuki/Basic-Banking-System/tree/master"  target="_blank" rel="noopener noreferrer">The Spark Foundation</a></li>
-        <li><a class="dropdown-item" href="https://github.com/Pritam-Akatsuki/OCTANET_AUGUST"  target="_blank" rel="noopener noreferrer">OctaNet</a></li>
-        <li><a class="dropdown-item" href="https://github.com/Pritam-Akatsuki/internsavy_Level-2_Task-1"  target="_blank" rel="noopener noreferrer">Internsavy</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
 
-</div>
+      <!-- Experience Summary -->
+      <div class="col-lg-4">
+        <div class="card bg-dark border-0 shadow-lg h-100">
+          <div class="card-body p-4">
+            <h3 class="card-title text-primary mb-4">
+              <i class="fas fa-star me-2"></i>Experience Overview
+            </h3>
+            <p class="card-text text-light mb-4">
+              During my web development internships, I gained hands-on experience with modern web technologies and best practices. My focus areas included:
+            </p>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-3 text-light">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                User Experience Design
+              </li>
+              <li class="mb-3 text-light">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Responsive Web Development
+              </li>
+              <li class="mb-3 text-light">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Performance Optimization
+              </li>
+            </ul>
+            
+            <div class="github-links">
+              <h5 class="text-primary mb-3">
+                <i class="fab fa-github me-2"></i>Project Repositories
+              </h5>
+              <div class="d-grid gap-2">
+                <a href="https://github.com/Pritam-Akatsuki/Basic-Banking-System/tree/master" 
+                   class="btn btn-outline-light btn-sm text-start" target="_blank">
+                  <i class="fas fa-code-branch me-2"></i>The Spark Foundation
+                </a>
+                <a href="https://github.com/Pritam-Akatsuki/OCTANET_AUGUST" 
+                   class="btn btn-outline-light btn-sm text-start" target="_blank">
+                  <i class="fas fa-code-branch me-2"></i>OctaNet
+                </a>
+                <a href="https://github.com/Pritam-Akatsuki/internsavy_Level-2_Task-1" 
+                   class="btn btn-outline-light btn-sm text-start" target="_blank">
+                  <i class="fas fa-code-branch me-2"></i>Internsavy
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ********************************* Project Page ******************************* -->
 <div class="bg-dark text-light pt-2 border-2 border-top border-dark-subtle" id="project">
-  <h1  class="hid text-center pb-3 pt-3 textStyle">Projects :)</h1>
-
+  <h2 class="display-4 text-center mb-5 textStyle animate__animated animate__fadeInDown">
+    All Project
+  </h2>
   <div class="container p-4">
   
       <div class="row p-4">
@@ -286,16 +561,87 @@
 
 
 <!-- ********************************* Footer Page ******************************* -->
-<footer class="text-center py-4" id='Footer'>
-  <div class="social-icons">
-    <a href="https://www.facebook.com/pritam.lambade.9/"><img src="ImgCss/FB.png" alt="Facebook"></a>
-    <a href="https://www.instagram.com/_mr.p_581_/?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D"><img src="ImgCss/insta.jpg" alt="Instagram"></a>
-    <a href="https://www.linkedin.com/in/mr-pritamlambade581/"><img src="ImgCss/LinkedIn.png" alt="LinkedIn"></a>
-</div>
-<div class="copyright">
-    &copy; 2023 All rights reserved , design by 2FT Wizards [Er. Lambade Pritam] - v5.0
-</div>
+<!-- Footer Section -->
+<footer class="footer-section py-5" id="Footer">
+    <div class="container">
+        <!-- Footer Content -->
+        <div class="row g-4 justify-content-center">
+            <!-- Contact Info -->
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-widget text-center text-md-start">
+                    <h4 class="widget-title">Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:pritamlambade@gmail.com">pritamlambade@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+917517851962">+91 7517851962</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Maharashtra, India</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
+            <!-- Quick Links -->
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-widget text-center">
+                    <h4 class="widget-title">Quick Links</h4>
+                    <ul class="quick-links">
+                        <li><a href="#about">About</a></li>
+                        <!-- <li><a href="#project">Projects</a></li> -->
+                        <li><a href="#Certification">Certifications</a></li>
+                        <li><a href="#Exp">Experience</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-widget text-center text-md-end">
+                    <h4 class="widget-title">Connect With Me</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/pritam.lambade.9/" class="social-link facebook" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/_mr.p_581_/" class="social-link instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mr-pritamlambade581/" class="social-link linkedin" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Pritam-Akatsuki" class="social-link github" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="footer-divider my-4"></div>
+
+        <!-- Copyright -->
+        <div class="copyright-wrapper text-center">
+            <div class="copyright-text">
+                &copy; 2023</span> All rights reserved
+            </div>
+            <div class="designer-credit">
+                Designed with <i class="fas fa-heart text-danger"></i> by 
+                <span class="designer-name">2FT Wizards [Er. Lambade Pritam]</span>
+                <span class="version-tag">v6.0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </footer>
 
 <!-- ********************************* End Page ******************************* -->
